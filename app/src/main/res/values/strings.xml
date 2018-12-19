@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidWebServerJava</string>
+
+
+    <string name="title_eng">Title</string>
+    <string name="content_eng">Content</string>
+
+    <string name="title_ua">Заголовок</string>
+    <string name="content_ua">Контент</string>
+
+
+</resources>
