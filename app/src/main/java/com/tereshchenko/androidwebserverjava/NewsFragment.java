@@ -58,7 +58,7 @@ public class NewsFragment extends Fragment implements AsyncResponse{
 
               ServerDataHandler handler = new ServerDataHandler();
               handler.delegate = this;
-              handler.execute("http://echo.jsontest.com/key/value/one/two");
+              handler.execute("http://10.100.0.87:8080/NewsServer/news");
 
 
         });
@@ -71,7 +71,10 @@ public class NewsFragment extends Fragment implements AsyncResponse{
     public void finishTask(JSONObject output) {
 
         try {
-            Toast.makeText(getContext(),output.getString("key"),Toast.LENGTH_SHORT).show();
+
+            News news = new News(Integer.parseInt(output.getString("id")),output.getString("title"),output.getString("content"));
+
+            Toast.makeText(getContext(),news.toString(),Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();
